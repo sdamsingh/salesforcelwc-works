@@ -1,0 +1,25 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="4">
+            <lightning-card title="Pick Account " icon-name="custom:custom67">
+                <template if:true={AccountOptionsList}>
+                    <div class="slds-m-around_medium">
+                        <lightning-combobox
+                        name="Account"
+                        label="Account"
+                        value={selectedAccount}
+                        placeholder="select Account"
+                        options={AccountOptionsList}
+                        onchange={handleAcountChange} ></lightning-combobox>    
+                        <p>Selected Account is:<b>{selectedAccount}</b></p>
+                    </div>
+                </template>      
+            </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="6">
+            <c-contact-list-account  account-id={selectedAccount} ></c-contact-list-account>
+        </lightning-layout-item>
+</lightning-layout>
+    
+    
+</template>
